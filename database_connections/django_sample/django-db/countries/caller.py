@@ -115,7 +115,7 @@ def add_grades():
 # Retrieve information from table
 def get_university_data():
     university_data = [
-        str(uni) for uni in Student.objects.all()
+        str(uni) for uni in University.objects.all()
     ]
     
     return ", ".join(university_data)
@@ -152,7 +152,7 @@ def update_grade():
         grade.subject = "Biology"
         grade.grade = 3.75
         grade.save()
-    except Student.DoesNotExist as e:
+    except Grade.DoesNotExist as e:
         return f"Error: {e.args[0]}"
 
 
